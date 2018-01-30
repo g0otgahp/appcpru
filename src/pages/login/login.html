@@ -1,0 +1,32 @@
+<ion-header>
+  
+    <ion-navbar>
+      <ion-title>เข้าสู่ระบบเจ้าหน้าที่</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  <ion-content padding>
+  
+      <ion-list>
+          <ion-card>
+            <ion-item>
+              <ion-label style="color:black;">Admin</ion-label>
+              <ion-input type="text" placeholder="แอดมิน ID"></ion-input>
+            </ion-item>
+      
+            <ion-item>
+              <ion-label style="color:black;">Password</ion-label>
+              <ion-input type="password" placeholder="รหัสผ่าน"></ion-input>
+            </ion-item>
+        
+          </ion-card>
+      
+          <div padding>
+              <button ion-button full (click)="onSubmit()">เข้าสู่ระบบ</button>
+            </div>
+      
+        </ion-list>
+  
+  </ion-content>
+  

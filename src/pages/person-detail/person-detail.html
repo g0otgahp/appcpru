@@ -1,0 +1,51 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>รายละเอียด</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <ion-card>
+        
+        <ion-card-content>
+            <img src="assets/img/{{PersonDetail.img}}" height="220">
+          <ion-card-title>
+            ชื่อ : {{PersonDetail.name}}
+            </ion-card-title>
+          <p>
+            คณะ : {{PersonDetail.falcuty}} <br>
+            สาขา : คอมพิวเตอร์ธุรกิจ <br>
+            ห้องพักครู : ตึกคณะบริหารธุรกิจ <br>
+            เบอร์โทรติดต่อ : {{PersonDetail.phone}} <br>
+          </p>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-row no-padding text-center>
+          <ion-col>
+              <a href="tel:{{PersonDetail.phone}}">
+            <button ion-button small color="secondary" icon-start>
+              <ion-icon name='call'></ion-icon>
+              โทรออก
+            </button>
+          </a>
+          </ion-col>
+          <ion-col >
+              <a class="item" target="_blank" href="{{PersonDetail.facebook}}">           
+            <button ion-button small color="defualt" icon-start>
+              <ion-icon name='logo-facebook'></ion-icon>
+              Facebook
+            </button>
+          </a>
+          
+          </ion-col>
+          <!-- <ion-col text-right>
+            <button ion-button clear small color="danger" icon-start>
+              <ion-icon name='share-alt'></ion-icon>
+              Share
+            </button>
+          </ion-col> -->
+        </ion-row>
+</ion-content>

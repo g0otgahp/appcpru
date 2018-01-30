@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Administrator</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content>
+  
+      <ion-item-divider style="background-color: #ff3333">
+          <ion-label>
+            รายชื่อบุคลากร
+          </ion-label>
+        </ion-item-divider>
+  
+      <!-- <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/teacher.png">
+        </ion-thumbnail>
+        <h3>ดร.วิระพงศ์ จันทร์สนาม</h3>
+        <p>คณะบริหารธุรกิจ</p>
+        <button ion-button clear item-end (click)="personDetail()">เรียกดู</button>
+      </ion-item> -->
+  
+      <ion-item *ngFor="let i of PersonList">
+        <ion-thumbnail item-start>
+          <img src="assets/img/{{i.img}}">
+        </ion-thumbnail>
+        <h3>{{i.name}}</h3>
+        <p>{{i.falcuty}}</p>
+        <button ion-button clear item-end (click)="personDetail(i)">เรียกดู</button>
+      </ion-item>
+  
+  </ion-content>
