@@ -12,7 +12,7 @@ import $ from 'jquery';
 export class CiProvider {
   // url: string = 'http://localhost/icheck/service/index.php/api/';
   // public url: string = 'http://baramesh.com/demo/icheck/service/index.php/api/';
-  public url: string = 'http://www.00505-429.com/@appcpur/service/index.php/api';
+  public url: string = 'http://www.00505-429.com/@inside/appcpru/service/index.php/api';
   
   constructor(public http: Http) {
   }

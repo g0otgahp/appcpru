@@ -9,7 +9,8 @@ import { NavController,NavParams } from 'ionic-angular';
 export class PersonDetailPage {
 
   PersonDetail:any = [];
-
+  IMG_URL: any = "http://www.00505-429.com/@inside/appcpru/service/images/";
+  
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,    

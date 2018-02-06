@@ -1,18 +1,49 @@
-<!--
-  Generated template for the PersonDetailAdminPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>person-detail-admin</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
+  
+    <ion-navbar>
+      <ion-title>รายละเอียด</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  <ion-content padding>
+      <ion-card>
+          
+          <ion-card-content>
+              <img src="{{IMG_URL + PersonDetail.personImg}}" height="220">
+            <ion-card-title>
+              ชื่อ : {{PersonDetail.personName}}
+              </ion-card-title>
+            <p>
+              คณะ : {{PersonDetail.personFaculty}} <br>
+              สาขา : {{PersonDetail.personBranch}} <br>
+              ห้องพักครู : {{PersonDetail.personOffice}} <br>
+              เบอร์โทรติดต่อ : {{PersonDetail.personPhone}} <br><br>
+              Facebook : {{PersonDetail.personFacebook}}           
+            </p>
+          </ion-card-content>
+        </ion-card>
+  
+        <ion-row no-padding text-center>
+            <ion-col>
+              <button ion-button small color="secondary" icon-start (click)="personEdit(PersonDetail)">
+                <ion-icon name='md-build'></ion-icon>
+                แก้ไข
+              </button>
+            </ion-col>
+            <ion-col >
+              <button ion-button small color="danger" icon-start (click)="personDelete(PersonDetail)">
+                <ion-icon name='md-close'></ion-icon>
+                ลบ
+              </button>
+            
+            </ion-col>
+            <!-- <ion-col text-right>
+              <button ion-button clear small color="danger" icon-start>
+                <ion-icon name='share-alt'></ion-icon>
+                Share
+              </button>
+            </ion-col> -->
+          </ion-row>
+  </ion-content>
+  
