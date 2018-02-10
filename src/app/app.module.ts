@@ -4,6 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http';
 import { CiProvider } from '../providers/ci';
+import { ConferenceData } from '../providers/conference-data';
 
 
 import { AboutPage } from '../pages/about/about';
@@ -55,6 +56,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     CiProvider,
+    ConferenceData,
   ]
 })
 export class AppModule {}

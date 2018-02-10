@@ -8,16 +8,17 @@
   
   <ion-content padding>
   
+      <form #LoginForm="ngForm">
       <ion-list>
           <ion-card>
             <ion-item>
               <ion-label style="color:black;">Admin</ion-label>
-              <ion-input type="text" placeholder="แอดมิน ID"></ion-input>
+              <ion-input [(ngModel)]="login.username" name="login.username" #login.username="ngModel" type="text" placeholder="แอดมิน ID"></ion-input>
             </ion-item>
       
             <ion-item>
               <ion-label style="color:black;">Password</ion-label>
-              <ion-input type="password" placeholder="รหัสผ่าน"></ion-input>
+              <ion-input [(ngModel)]="login.password" name="login.password" #login.password="ngModel" type="password" placeholder="รหัสผ่าน"></ion-input>
             </ion-item>
         
           </ion-card>
@@ -27,6 +28,6 @@
             </div>
       
         </ion-list>
-  
+  </form>
   </ion-content>
   

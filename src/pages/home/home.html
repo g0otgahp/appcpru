@@ -2,7 +2,7 @@
   <ion-navbar>
     <ion-title>ติดต่อบุคลากร</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only color="royal" (click)="personAdd()">
+      <button ion-button icon-only color="royal" (click)="LoginAdmin()">
   <ion-icon name="md-person-add"></ion-icon>
 </button>
     </ion-buttons>
@@ -10,9 +10,12 @@
 </ion-header>
 
 <ion-content>
-
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+      
     <ion-item-divider style="background-color: #aae5ff">
-        <ion-label>
+        <ion-label style="color:black;">
           รายชื่อบุคลากร
         </ion-label>
       </ion-item-divider>
@@ -27,12 +30,12 @@
     </ion-item> -->
 
     <ion-item *ngFor="let i of PersonList">
-      <ion-thumbnail item-start>
-        <img src="assets/img/{{i.img}}">
-      </ion-thumbnail>
-      <h3>{{i.name}}</h3>
-      <p>{{i.falcuty}}</p>
-      <button ion-button clear item-end (click)="personDetail(i)">เรียกดู</button>
-    </ion-item>
+        <ion-thumbnail item-start>
+          <img src="{{IMG_URL+i.personImg}}">
+        </ion-thumbnail>
+        <h3>{{i.personName}}</h3>
+        <p>{{i.personFaculty}}</p>
+        <button ion-button clear item-end (click)="personDetail(i)">เรียกดู</button>
+      </ion-item>
 
 </ion-content>

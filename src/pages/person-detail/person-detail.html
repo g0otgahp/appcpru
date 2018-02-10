@@ -10,22 +10,23 @@
     <ion-card>
         
         <ion-card-content>
-            <img src="assets/img/{{PersonDetail.img}}" height="220">
+            <img src="{{IMG_URL + PersonDetail.personImg}}" height="220">
           <ion-card-title>
-            ชื่อ : {{PersonDetail.name}}
+            ชื่อ : {{PersonDetail.personName}}
             </ion-card-title>
           <p>
-            คณะ : {{PersonDetail.falcuty}} <br>
-            สาขา : คอมพิวเตอร์ธุรกิจ <br>
-            ห้องพักครู : ตึกคณะบริหารธุรกิจ <br>
-            เบอร์โทรติดต่อ : {{PersonDetail.phone}} <br>
+            คณะ : {{PersonDetail.personFaculty}} <br>
+            สาขา : {{PersonDetail.personBranch}} <br>
+            ห้องพักครู : {{PersonDetail.personOffice}} <br>
+            เบอร์โทรติดต่อ : {{PersonDetail.personPhone}} <br><br>
+            Facebook : {{PersonDetail.personFacebook}}           
           </p>
         </ion-card-content>
       </ion-card>
 
       <ion-row no-padding text-center>
           <ion-col>
-              <a href="tel:{{PersonDetail.phone}}">
+              <a href="tel:{{PersonDetail.personPhone}}">
             <button ion-button small color="secondary" icon-start>
               <ion-icon name='call'></ion-icon>
               โทรออก
@@ -33,7 +34,7 @@
           </a>
           </ion-col>
           <ion-col >
-              <a class="item" target="_blank" href="{{PersonDetail.facebook}}">           
+              <a class="item" target="_blank" href="{{PersonDetail.personFacebook}}">           
             <button ion-button small color="defualt" icon-start>
               <ion-icon name='logo-facebook'></ion-icon>
               Facebook

@@ -21,4 +21,8 @@ export class PersonAddPage {
     console.log('ionViewDidLoad PersonAddPage');
   }
 
+  onTakePhoto() {
+    console.log('ถ่ายรูป');
+  }
+
 }

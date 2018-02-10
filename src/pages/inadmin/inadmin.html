@@ -1,13 +1,21 @@
 <ion-header>
     <ion-navbar>
       <ion-title>Administrator</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only color="royal" (click)="personAdd()">
+    <ion-icon name="md-add-circle"></ion-icon>
+  </button>
+      </ion-buttons>
     </ion-navbar>
   </ion-header>
   
   <ion-content>
-  
+      <ion-refresher (ionRefresh)="doRefresh($event)">
+          <ion-refresher-content></ion-refresher-content>
+        </ion-refresher>
+        
       <ion-item-divider style="background-color: #ff3333">
-          <ion-label>
+          <ion-label style="color:white;">
             รายชื่อบุคลากร
           </ion-label>
         </ion-item-divider>

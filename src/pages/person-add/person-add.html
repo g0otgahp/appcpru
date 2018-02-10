@@ -10,6 +10,7 @@
 
     <ion-list>
         <ion-card>
+
           <ion-item>
             <ion-label style="color:black;">ชื่อบุคลากร</ion-label>
             <ion-input type="text" placeholder="กรอกชื่อ-นามสกุล"></ion-input>
@@ -28,11 +29,25 @@
         <ion-item>
             <ion-label style="color:black;">สาขา</ion-label>
             <ion-input type="text" placeholder="กรอกสาขา"></ion-input>
-          </ion-item>
+        </ion-item>
+
+        <ion-item>
+            <ion-label style="color:black;">ห้องพัก</ion-label>
+            <ion-input type="text" placeholder="กรอกห้องพัก"></ion-input>
+        </ion-item>
+
+          <ion-item>
+              <ion-label style="color:black;">FB URL</ion-label>
+              <ion-input type="text" placeholder="กรอกลิงค์ Facebook"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <button ion-button block (click)="onTakePhoto()">รูปภาพ</button>            
+      </ion-item>
+
         </ion-card>
-    
         <div padding>
-            <button ion-button full>เพิ่มรายชื่อ</button>
+            <button ion-button full color="secondary">บันทึก</button>
           </div>
     
       </ion-list>

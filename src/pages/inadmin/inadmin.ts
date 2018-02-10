@@ -21,6 +21,11 @@ export class InAdminPage {
 
   }
 
+  ionViewWillEnter() {
+    console.log('loading...');
+    this.ionViewDidLoad();
+  }
+
   ionViewDidLoad() {
     let seq = this.ci.get('App/PersonLoad').share();
     seq.map(res => res.json())
@@ -37,9 +42,13 @@ export class InAdminPage {
     this.navCtrl.push(PersonDetailAdminPage,item);
   }
 
+  personAdd() {
+    this.navCtrl.push(PersonAddPage);
+  }
+
   doRefresh(refresher: any) {
     setTimeout(() => {
-      // this.ionViewDidLoad();
+      this.ionViewDidLoad();
       refresher.complete();
       const toast = this.toastCtrl.create({
         message: 'โหลดข้อมูลล่าสุดแล้ว',

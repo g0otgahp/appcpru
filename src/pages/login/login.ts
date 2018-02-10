@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { InAdminPage } from '../inadmin/inadmin';
-
+import { CiProvider } from "../../providers/ci";
+import 'rxjs/add/operator/share';
 /**
  * Generated class for the LoginPage page.
  *
@@ -15,7 +16,15 @@ import { InAdminPage } from '../inadmin/inadmin';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  submitted = false;
+  login: any = {};
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private alertCtrl: AlertController,
+    public ci: CiProvider,
+  ) {
   }
 
   ionViewDidLoad() {
@@ -23,7 +32,34 @@ export class LoginPage {
   }
 
   onSubmit() {
-    this.navCtrl.push(InAdminPage);
+    var param = this.login;
+    let seq = this.ci.post('App/CheckLogin', param).share();
+    seq.map(res => res.json())
+      .subscribe(res => {
+        console.log(res);        
+        if (res.CheckLogin.Data > 0) {
+          let alert = this.alertCtrl.create({
+            title: 'Admin',
+            subTitle: 'คุณได้เข้าสู่ระบบการจัดการแอดมิน',
+            buttons: ['ตกลง']
+          });
+          alert.present();
+          this.navCtrl.push(InAdminPage);    
+        } else {
+          this.dontPass();
+        }
+      }, err => {
+        console.error('ERROR', err);
+      });
+  }
+
+  dontPass() {
+    let alert = this.alertCtrl.create({
+      subTitle: 'รหัสผ่านไม่ถูกต้อง',
+      buttons: ['ตกลง']
+    });
+    alert.present();
+    this.navCtrl.pop()
   }
 
 }
